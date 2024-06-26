@@ -6,6 +6,9 @@ dotenv.config();
 
 const basename = path.basename(__filename);
 const db = {};
+
+console.log("Username:",process.env.DB_USERNAME, "Password:",process.env.DB_PASSWORD)
+
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,
   process.env.DB_USERNAME,
@@ -14,12 +17,12 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
     port: process.env.DB_PORT,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false,
+    //   },
+    // },
   }
 );
 
